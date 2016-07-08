@@ -3,13 +3,16 @@
 <head>
     <link rel="stylesheet" type="text/css" href="font.css" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="animate.css" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
     <!-- <link rel="stylesheet" type="text/css" href="bower_components/font-awesome/css/font-awesome.css" /> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- <script src="jquery.min.js"></script> -->
 </head>
 
 <body class="blue">
     <page size="A4">
-        <div class="container head m-b-15 color">
+        <div class="container head m-b-15 color anim flipInX animated">
             <div class="left-container">
                 <div>
                     <h2>Rajesh P R</h2>
@@ -26,7 +29,7 @@
             </div>
         </div>
         <div class="left-container">
-            <div class="container m-b-15">
+            <div class="container m-b-15 anim flipInX animated">
                 <h2 class="f-color">Experience</h2>
                 <h3>
                   <strong>
@@ -34,10 +37,12 @@
                   </strong>
                   Guindy — ​Senior Software Engineer
                 </h3>
-                <h4>September 2011 - PRESENT</h4>
+                <h4>September 2011 - Present</h4>
                 <section>Overall 4+ years of experience in Analysis, Design, Development and Deployment of web based applications.</section>
+                <section>Capability to learn and work with new technologies very quickly.</section>
+                <section>Ability to Manage a Team, Worked in a Team as well as Individually.</section>
             </div>
-            <div class="container m-b-15 projects">
+            <div class="container m-b-15 projects anim flipInX animated">
                 <h2 class="f-color">Projects</h2>
                 <!-- ------------------- Project #1 ------------------- -->
                 <h3>
@@ -94,7 +99,7 @@
                 <section>Tech Stack: Ruby on Rails, Javascript, Jquery, Bootstrap</section>
 
             </div>
-            <div class="container m-t-15">
+            <div class="container m-t-15 anim flipInX animated">
                 <h2 class="f-color">Education</h2>
                 <!-- -------------- PG -------------- -->
                 <h3>
@@ -125,50 +130,74 @@
             </div>
         </div>
         <div class="right-container">
-            <div class="container color m-b-15">
+            <div class="container color m-b-15 anim flipInX animated">
                 <div class="m-t-12">
-                    <h3><strong>Front-end Skills</strong></h3>
+                    <h3>Front-end Skills</h3>
                     <div class="skill-set">HTML, CSS3, Bootstrap, Materializecss, Javascript, Jquery, JqueryMobile, JqueryUI, BackboneJs, ReactJs, AngularJs, Ionic, Phonegap, Cordova</div>
                 </div>
             </div>
-            <div class="container color m-b-15">
+            <div class="container color m-b-15 anim flipInX animated">
                 <div class="m-t-12">
-                    <h3><strong>JS Linting Tools</strong></h3>
+                    <h3>JS Linting Tools</h3>
                     <div class="skill-set">JSLint, JSHint, ESLint</div>
                 </div>
             </div>
-            <div class="container color m-b-15">
+            <div class="container color m-b-15 anim flipInX animated">
                 <div class="m-t-12">
-                    <h3><strong>JS Task Runner</strong></h3>
+                    <h3>JS Task Runner</h3>
                     <div class="skill-set">Grunt, Gulp, Webpack</div>
                 </div>
             </div>
-            <div class="container color m-b-15">
+            <div class="container color m-b-15 anim flipInX animated">
                 <div class="m-t-12">
-                    <h3><strong>Back-end Skills</strong></h3>
+                    <h3>Back-end Skills</h3>
                     <div class="skill-set">NodeJs, Loopback, Sails, Ruby, Mysql, Postgresql</div>
                 </div>
             </div>
-            <div class="container color m-b-15">
+            <div class="container color m-b-15 anim flipInX animated">
                 <div class="m-t-12">
-                    <h3><strong>Version Control</strong></h3>
+                    <h3>Version Control</h3>
                     <div class="skill-set">Git - Github, BitBucket</div>
                 </div>
             </div>
-            <div class="container color m-b-15">
+            <div class="container color m-b-15 anim flipInX animated">
                 <div class="m-t-12">
-                    <h3><strong>Deployment Skills</strong></h3>
+                    <h3>Deployment Skills</h3>
                     <div class="skill-set">Heroku, AWS, Digital Ocean</div>
                 </div>
             </div>
-            <div class="container color m-b-15">
+            <div class="container color m-b-15 anim flipInX animated">
                 <div class="m-t-12">
-                    <h3><strong>Hobbies</strong></h3>
+                    <h3>Languages</h3>
+                    <div class="skill-set">English, Tamil</div>
+                </div>
+            </div>
+            <div class="container color m-b-15 anim flipInX animated">
+                <div class="m-t-12">
+                    <h3>Hobbies</h3>
                     <div class="skill-set">Playing Cricket, Sudoku</div>
                 </div>
             </div>
         </div>
     </page>
+    <div class="settings">
+      <div class="print bounceInLeft animated" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i></div>
+      <div class="color-plate blue fadeInLeft animated"></div>
+      <div class="color-plate white fadeInDown animated"></div>
+      <div class="color-plate green fadeInDown animated"></div>
+      <div class="color-plate purple fadeIn animated"></div>
+      <div class="color-plate red fadeInUp animated"></div>
+    </div>
 </body>
+<script>
+$(".color-plate").click(function(){
+  var getColor = $(this).attr('class').split(" ")[1];
+  $(".anim").removeClass("flipInX animated");
+  $("body").removeClass().addClass(getColor);
+  setTimeout(function(){
+    $(".anim").addClass("flipInX animated");
+  }, 100);
+});
+</script>
 
 </html>
